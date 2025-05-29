@@ -22,7 +22,9 @@ objetoAPegar = np.array([[99,100],
 
 # Prueba de funciones
 coordenadaInicioImagenOriginal = fn.encontrarPosicionImagen(imgOriginal=imgOriginal, objetoABuscar=objetoABuscar)
-print("Coordenadas de inicio de la imagen original:", coordenadaInicioImagenOriginal)
 
 if (len(coordenadaInicioImagenOriginal) == 0):
   print("No se encontró el objeto a buscar en la imagen original.")
+else:
+  imagenFinal = fn.pegarObjeto(imgOriginal=imgOriginal, objetoAPegar=objetoAPegar, coordenadaInicio=coordenadaInicioImagenOriginal)
+  print("Imagen final después de pegar el objeto:", imagenFinal)

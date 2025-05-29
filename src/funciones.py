@@ -1,5 +1,9 @@
 import numpy as np
 
+# pip install pillow
+# Libreria para redimensionar imágenes
+from PIL import Image
+
 def encontrarPosicionImagen(imgOriginal, objetoABuscar):
   altoOriginal, anchoOriginal = imgOriginal.shape
   altoObjetoBuscar, anchoObjetoBuscar = objetoABuscar.shape
@@ -17,7 +21,8 @@ def encontrarPosicionImagen(imgOriginal, objetoABuscar):
             np.array_equal(columnaAPixelesImgOriginal, columnaAPixelesObjetoBuscar)):
           pedazoAComparar = imgOriginal[i:i+altoObjetoBuscar, j:j+anchoObjetoBuscar]
           if esPedazoEncontrado(pedazoAComparar, objetoABuscar):
-            coordenadaInicioImagenOriginal.append((i, j))
+            coordenadaInicioImagenOriginal.append(i)
+            coordenadaInicioImagenOriginal.append(j)
   return coordenadaInicioImagenOriginal
           
 def esPedazoEncontrado(pedazoAComparar, objetoABuscar):
@@ -27,3 +32,21 @@ def esPedazoEncontrado(pedazoAComparar, objetoABuscar):
       if pedazoAComparar[i,j] != objetoABuscar[i,j]:
         return False
   return True
+
+def pegarObjeto(imgOriginal, objetoAPegar, coordenadaInicio):
+  altoOriginal, anchoOriginal = imgOriginal.shape
+  i = coordenadaInicio[0]
+  j = coordenadaInicio[1]
+  altoObjetoAPegar, anchoObjetoAPegar = objetoAPegar.shape
+  finalI = i + altoObjetoAPegar
+  finalJ = j + anchoObjetoAPegar
+  
+  for x in range(altoObjetoAPegar):
+    for y in range(anchoObjetoAPegar):
+      if (i + x < altoOriginal and j + y < anchoOriginal):
+        imgOriginal[i + x, j + y] = objetoAPegar[x, y]
+      else:
+        print("Error: El objeto a pegar excede los límites de la imagen original.")
+        return False
+
+  return imgOriginal
