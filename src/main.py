@@ -1,30 +1,53 @@
 import numpy as np
 import funciones as fn
+import streamlit as st
+# streamlit run src/main.py
 
-# Prueba imagen original
-imgOriginal = np.array([[1,2,3,4,5],
-                           [6,7,8,9,10],
-                           [11,12,13,14,15],
-                           [16,17,18,19,20],
-                           [21,22,23,24,25]])
+# Array de prueba para funcionamiento del programa
+img_prueba = np.array([
+  [[25,36,48],[2,25,36],[13,45,79],[14,12,14],[12,58,65]],
+  [[6,87,45],[7,7,7],[8,8,8],[9,9,9],[10,10,10]],
+  [[11,11,11],[12,12,12],[13,13,13],[14,14,14],[15,15,15]],
+  [[16,16,16],[17,17,17],[18,18,18],[19,19,19],[20,20,20]],
+  [[21,21,21],[22,22,22],[23,23,23],[24,24,24],[25,25,25]]
+  ])
 
-# Objeto a buscar
-objetoABuscar = np.array([[7,8],
-                          [12,13]])
+# Pedazo de imagen original a buscar para pegar otra imagen
+img_buscar = np.array([
+  [[7,7,7],[8,8,8]],
+  [[12,12,12],[13,13,13]]
+  ])
 
-# Objeto a buscar que no existe
-objetoABuscarInexistente = np.array([[99,100],
-                                      [101,102]])
+# Array de prueba que no pertenece a imagen_prueba para detectar errores
+img_inexistente = np.array([
+  [[99,99,99],[100,100,100]],
+  [[101,101,101],[102,102,102]]
+  ])
 
-# Objeto a pegar
-objetoAPegar = np.array([[99,100],
-                          [101,102]])
+# Array de prueba que se pegará en la imagen original
+img_pegar = np.array([
+  [[99,99,99],[100,100,100]],
+  [[101,101,101],[102,102,102]]
+  ])
+
+# Array de prueba por si se quiere pegar un objeto más chico al pedazo a buscar
+img_pegar_chico = np.array([
+  [[99,99,99], [100,100,100]]
+  ])
+
+# Array de prueba por si se quiere pegar un objeto más grande al pedazo a buscar
+img_pegar_grande = np.array([
+  [[99,99,99], [100,100,100], [101,101,101]],
+  [[102,102,102], [103,103,103], [104,104,104]],
+  [[105,105,105], [106,106,106], [107,107,107]]
+  ])
 
 # Prueba de funciones
-coordenadaInicioImagenOriginal = fn.encontrarPosicionImagen(imgOriginal=imgOriginal, objetoABuscar=objetoABuscar)
+coords = fn.encontrar_posicion_imgbuscar(img=img_prueba, img_buscar=img_buscar)
 
-if (len(coordenadaInicioImagenOriginal) == 0):
-  print("No se encontró el objeto a buscar en la imagen original.")
+if len(coords) > 0:
+  img_final = fn.pegar_img(img=img_prueba, coords=coords, img_pegar=img_pegar_chico, img_buscar=img_buscar)
+  print("Imagen original con el objeto pegado:")
+  print(img_final)
 else:
-  imagenFinal = fn.pegarObjeto(imgOriginal=imgOriginal, objetoAPegar=objetoAPegar, coordenadaInicio=coordenadaInicioImagenOriginal)
-  print("Imagen final después de pegar el objeto:", imagenFinal)
+  print("No se encontró el pedazo de imagen a buscar.")
