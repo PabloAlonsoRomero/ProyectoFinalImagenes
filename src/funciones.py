@@ -1,8 +1,27 @@
 import numpy as np
+import matplotlib.image as mpimg
 
 # pip install pillow
 # Libreria para redimensionar imágenes
 from PIL import Image
+
+def cargar_imagen_rgb(path):
+  """
+  Carga una imagen y la convierte a formato RGB sin canal alfa
+  :param path: Ruta de la imagen
+  :return: Imagen en formato RGB como array de numpy tipo uint8
+  """
+  img = mpimg.imread(path)
+
+  # Si tiene canal alfa, se elimina
+  if img.shape[2] == 4:
+    img = img[:, :, :3]
+
+  # Si los valores están en float (0-1), se convierten a uint8 (0-255)
+  if img.dtype != np.uint8:
+    img = (img * 255).astype(np.uint8)
+
+  return img
 
 # Funcion para encontrar la posicion de un pedazo de imagen dentro de una imagen original
 def encontrar_posicion_imgbuscar(img, img_buscar):
