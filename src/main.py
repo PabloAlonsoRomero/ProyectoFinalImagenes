@@ -49,20 +49,20 @@ img_pegar_grande = np.array([
 coords = fn.encontrar_posicion_imgbuscar(img=img_prueba, img_buscar=img_buscar)
 
 # Prueba funciones con imagenes reales:
-img_prueba1 = fn.cargar_imagen_rgb('data/ImagenOriginal1.jpg')
-img_buscar1 = fn.cargar_imagen_rgb('data/PedazoACambiar1.png')
-img_buscar2 = fn.cargar_imagen_rgb('data/PedazoACambiar2.png')
-img_pegar1 = fn.cargar_imagen_rgb('data/ImagenAPegar1.jpg')
-img_pegar2 = fn.cargar_imagen_rgb('data/ImagenAPegar2.jpg')
+img_prueba1 = fn.cargar_imagen_rgb('data/img_prueba1.png')
+img_buscar1 = fn.cargar_imagen_rgb('data/img_buscar1.png')
+# img_buscar2 = fn.cargar_imagen_rgb('data/img_buscar2.png')
+img_pegar1 = fn.cargar_imagen_rgb('data/img_pegar1.png')
+img_pegar2 = fn.cargar_imagen_rgb('data/img_pegar2.png')
 
-coords = fn.encontrar_posicion_imgbuscar(img=img_prueba1, img_buscar=img_buscar2)
-print(img_buscar2[0, 0, :])
-print(img_prueba1[0, 0, :])
-print(img_buscar2.dtype)
-print(img_prueba1.dtype)
+st.title("Proyecto Final - Procesamiento de Imágenes")
+
+
+
+coords = fn.encontrar_posicion_imgbuscar(img=img_prueba1, img_buscar=img_buscar1)
 
 if len(coords) > 0:
-  img_final1 = fn.pegar_img(img=img_prueba1, coords=coords, img_pegar=img_pegar1, img_buscar=img_buscar1)
+  img_final1 = fn.pegar_img(img=img_prueba1, coords=coords, img_pegar=img_pegar2, img_buscar=img_buscar1)
 
   fig, axs = plt.subplots(2, 2, figsize=(10, 10))
   axs[0, 0].imshow(img_prueba1)
@@ -73,7 +73,7 @@ if len(coords) > 0:
   axs[0, 1].set_title('Pedazo a Buscar')
   axs[0, 1].axis('off')
 
-  axs[1, 0].imshow(img_pegar1)
+  axs[1, 0].imshow(img_pegar2)
   axs[1, 0].set_title('Imagen a Pegar')
   axs[1, 0].axis('off')
 
@@ -82,5 +82,13 @@ if len(coords) > 0:
   axs[1, 1].axis('off')
 
   plt.show()
+
+  st.subheader("Imagenes")
+
+  st.image(img_prueba1, caption='Imagen Original', use_container_width=True)
+  st.image(img_buscar1, caption='Pedazo a Buscar', use_container_width=True)
+  st.image(img_pegar2, caption='Imagen a Pegar', use_container_width=True)
+  st.image(img_final1, caption='Imagen Final', use_container_width=True)
 else:
   print("No se encontró el pedazo de imagen a buscar.")
+  st.info("No se encontró el pedazo de imagen a buscar.")

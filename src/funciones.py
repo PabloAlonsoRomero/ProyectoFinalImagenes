@@ -102,8 +102,8 @@ def pegar_img(img, coords, img_pegar, img_buscar):
   :param img_buscar: Pedazo de la imagen original donde se pegará la imagen a pegar
   :return: Imagen original con el objeto pegado
   """
+  img_copy = img.copy()
   # Tamaño de la imagen original
-  alto_img, ancho_img, canales_img_original = img.shape
 
   # Variable para almacenar la coordenada de inicio de la imagen a buscar
   i = coords[0]
@@ -131,10 +131,10 @@ def pegar_img(img, coords, img_pegar, img_buscar):
     # Ciclo for para recorrer el ancho de la imagen a pegar
     for y in range(ancho_img_pegar):
       # Cambiar valores de la imagen original en las coordenadas correspondientes
-      img[i + x, j + y, :] = img_pegar[x, y, :]
+      img_copy[i + x, j + y, :] = img_pegar[x, y, :]
   
   # Retorna la imagen original con el objeto pegado
-  return img
+  return img_copy
 
 def redimensionar_img(img, ancho, alto):
   """
