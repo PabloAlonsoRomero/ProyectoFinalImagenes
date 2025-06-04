@@ -114,7 +114,7 @@ def pegar_img(img, coords, img_pegar, img_buscar):
   # Tamaño de la imagen a buscar
   alto_img_buscar, ancho_img_buscar, canales_img_buscar = img_buscar.shape
   
-  # Verifica si la imagen a pegar es más grande que el pedazo a buscar
+  # Verifica si la imagen a pegar es más grande o más pequeña que el pedazo a buscar
   if alto_img_pegar > alto_img_buscar or ancho_img_pegar > ancho_img_buscar or alto_img_pegar < alto_img_buscar or ancho_img_pegar < ancho_img_buscar:
     img_pegar = redimensionar_img(img_pegar, ancho_img_buscar, alto_img_buscar)
   

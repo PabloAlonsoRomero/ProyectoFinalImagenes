@@ -2,9 +2,6 @@ import numpy as np
 import funciones as fn
 import streamlit as st
 
-import os
-directorio_actual = os.getcwd()
-
 # streamlit run src/main.py
 
 # Array de prueba para funcionamiento del programa
