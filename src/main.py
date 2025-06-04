@@ -51,7 +51,7 @@ coords = fn.encontrar_posicion_imgbuscar(img=img_prueba, img_buscar=img_buscar)
 
 # Prueba funciones con imagenes reales:
 # Cargar imagenes ejemplo 1:
-imagen1fondo = fn.cargar_imagen_rgb('../../data/fondos/brasil.png')
+imagen1fondo = fn.cargar_imagen_rgb('data/fondos/brasil.png')
 imagen1buscar = fn.cargar_imagen_rgb('../data/buscar/buscar_brasil.png')
 imagen1reemplazar = fn.cargar_imagen_rgb('../data/reemplazar/cat.png')
 coords1imagen = fn.encontrar_posicion_imgbuscar(img=imagen1fondo, img_buscar=imagen1buscar)
