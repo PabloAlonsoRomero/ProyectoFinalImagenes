@@ -1,8 +1,9 @@
 import numpy as np
 import funciones as fn
 import streamlit as st
-import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
+
+import os
+st.write("Directorio actual:", os.getcwd())
 
 # streamlit run src/main.py
 
