@@ -63,7 +63,7 @@ imagen2reemplazar = fn.cargar_imagen_rgb('data/reemplazar/mamberroi.png')
 coords2imagen = fn.encontrar_posicion_imgbuscar(img=imagen2fondo, img_buscar=imagen2buscar)
 
 # Cargar imagenes ejemplo 3:
-imagen3fondo = fn.cargar_imagen_rgb('/data/fondos/f1.png')
+imagen3fondo = fn.cargar_imagen_rgb('data/fondos/f1.png')
 imagen3buscar = fn.cargar_imagen_rgb('data/buscar/buscar_f1.png')
 imagen3reemplazar = fn.cargar_imagen_rgb('data/reemplazar/simio.png')
 coords3imagen = fn.encontrar_posicion_imgbuscar(img=imagen3fondo, img_buscar=imagen3buscar)
