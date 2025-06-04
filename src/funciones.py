@@ -11,17 +11,8 @@ def cargar_imagen_rgb(path):
   :param path: Ruta de la imagen
   :return: Imagen en formato RGB como array de numpy tipo uint8
   """
-  img = mpimg.imread(path)
-
-  # Si tiene canal alfa, se elimina
-  if img.shape[2] == 4:
-    img = img[:, :, :3]
-
-  # Si los valores están en float (0-1), se convierten a uint8 (0-255)
-  if img.dtype != np.uint8:
-    img = (img * 255).astype(np.uint8)
-
-  return img
+  img = Image.open(path).convert("RGB")
+  return np.array(img)
 
 # Funcion para encontrar la posicion de un pedazo de imagen dentro de una imagen original
 def encontrar_posicion_imgbuscar(img, img_buscar):
