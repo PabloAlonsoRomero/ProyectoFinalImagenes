@@ -1,5 +1,4 @@
 import numpy as np
-import matplotlib.image as mpimg
 
 # pip install pillow
 # Libreria para redimensionar imágenes
