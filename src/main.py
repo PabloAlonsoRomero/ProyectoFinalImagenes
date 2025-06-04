@@ -49,45 +49,29 @@ img_pegar_grande = np.array([
 coords = fn.encontrar_posicion_imgbuscar(img=img_prueba, img_buscar=img_buscar)
 
 # Prueba funciones con imagenes reales:
-
-st.title("Proyecto Final - Procesamiento de Imágenes")
-
 # Cargar imagenes ejemplo 1:
 imagen1fondo = fn.cargar_imagen_rgb('data/fondos/brasil.png')
 imagen1buscar = fn.cargar_imagen_rgb('data/buscar/buscar_brasil.png')
 imagen1reemplazar = fn.cargar_imagen_rgb('data/reemplazar/cat.png')
 coords1imagen = fn.encontrar_posicion_imgbuscar(img=imagen1fondo, img_buscar=imagen1buscar)
 
-coords = fn.encontrar_posicion_imgbuscar(img=img_prueba1, img_buscar=img_buscar1)
+# Cargar imagenes ejemplo 2:
+imagen2fondo = fn.cargar_imagen_rgb('data/fondos/bus.png')
+imagen2buscar = fn.cargar_imagen_rgb('data/buscar/buscar_bus.png')
+imagen2reemplazar = fn.cargar_imagen_rgb('data/reemplazar/mamberroi.png')
+coords2imagen = fn.encontrar_posicion_imgbuscar(img=imagen2fondo, img_buscar=imagen2buscar)
 
-if len(coords) > 0:
-  img_final1 = fn.pegar_img(img=img_prueba1, coords=coords, img_pegar=img_pegar2, img_buscar=img_buscar1)
+# Cargar imagenes ejemplo 3:
+imagen3fondo = fn.cargar_imagen_rgb('data/fondos/F1.png')
+imagen3buscar = fn.cargar_imagen_rgb('data/buscar/buscar_F1.png')
+imagen3reemplazar = fn.cargar_imagen_rgb('data/reemplazar/simio.png')
+coords3imagen = fn.encontrar_posicion_imgbuscar(img=imagen3fondo, img_buscar=imagen3buscar)
 
-  fig, axs = plt.subplots(2, 2, figsize=(10, 10))
-  axs[0, 0].imshow(img_prueba1)
-  axs[0, 0].set_title('Imagen Original')
-  axs[0, 0].axis('off')
+# Cargar imagenes de prueba
+imagen4fondo = fn.cargar_imagen_rgb('data/fondos/brasil.png')
+# Pedazo a buscar que no se encuentra en la imagen de fondo para probar el mensaje de error
+imagen4buscar = fn.cargar_imagen_rgb('data/fondos/buscar_bus.png') 
+imagen4reemplazar = fn.cargar_imagen_rgb('data/reemplazar/mamberroi.png')
+coords4imagen = fn.encontrar_posicion_imgbuscar(img=imagen4fondo, img_buscar=imagen4buscar)
 
-  axs[0, 1].imshow(img_buscar1)
-  axs[0, 1].set_title('Pedazo a Buscar')
-  axs[0, 1].axis('off')
-
-  axs[1, 0].imshow(img_pegar2)
-  axs[1, 0].set_title('Imagen a Pegar')
-  axs[1, 0].axis('off')
-
-  axs[1, 1].imshow(img_final1)
-  axs[1, 1].set_title('Imagen Final')
-  axs[1, 1].axis('off')
-
-  plt.show()
-
-  st.subheader("Imagenes")
-
-  st.image(img_prueba1, caption='Imagen Original', use_container_width=True)
-  st.image(img_buscar1, caption='Pedazo a Buscar', use_container_width=True)
-  st.image(img_pegar2, caption='Imagen a Pegar', use_container_width=True)
-  st.image(img_final1, caption='Imagen Final', use_container_width=True)
-else:
-  print("No se encontró el pedazo de imagen a buscar.")
-  st.info("No se encontró el pedazo de imagen a buscar.")
+st.title("Proyecto Final - Procesamiento de Imágenes")
