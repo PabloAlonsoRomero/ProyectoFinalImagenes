@@ -52,13 +52,13 @@ coords = fn.encontrar_posicion_imgbuscar(img=img_prueba, img_buscar=img_buscar)
 # Prueba funciones con imagenes reales:
 # Cargar imagenes ejemplo 1:
 imagen1fondo = fn.cargar_imagen_rgb('data/fondos/brasil.png')
-imagen1buscar = fn.cargar_imagen_rgb('../data/buscar/buscar_brasil.png')
-imagen1reemplazar = fn.cargar_imagen_rgb('../data/reemplazar/cat.png')
+imagen1buscar = fn.cargar_imagen_rgb('data/buscar/buscar_brasil.png')
+imagen1reemplazar = fn.cargar_imagen_rgb('data/reemplazar/cat.png')
 coords1imagen = fn.encontrar_posicion_imgbuscar(img=imagen1fondo, img_buscar=imagen1buscar)
 
 # Cargar imagenes ejemplo 2:
-imagen2fondo = fn.cargar_imagen_rgb('../data/fondos/bus.png')
-imagen2buscar = fn.cargar_imagen_rgb('../data/buscar/buscar_bus.png')
+imagen2fondo = fn.cargar_imagen_rgb('data/fondos/bus.png')
+imagen2buscar = fn.cargar_imagen_rgb('data/buscar/buscar_bus.png')
 imagen2reemplazar = fn.cargar_imagen_rgb('../data/reemplazar/mamberroi.png')
 coords2imagen = fn.encontrar_posicion_imgbuscar(img=imagen2fondo, img_buscar=imagen2buscar)
 
