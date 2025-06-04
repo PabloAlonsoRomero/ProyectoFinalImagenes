@@ -50,28 +50,28 @@ coords = fn.encontrar_posicion_imgbuscar(img=img_prueba, img_buscar=img_buscar)
 
 # Prueba funciones con imagenes reales:
 # Cargar imagenes ejemplo 1:
-imagen1fondo = fn.cargar_imagen_rgb('../data/fondos/brasil.png')
-imagen1buscar = fn.cargar_imagen_rgb('../data/buscar/buscar_brasil.png')
-imagen1reemplazar = fn.cargar_imagen_rgb('../data/reemplazar/cat.png')
+imagen1fondo = fn.cargar_imagen_rgb('data/fondos/brasil.png')
+imagen1buscar = fn.cargar_imagen_rgb('data/buscar/buscar_brasil.png')
+imagen1reemplazar = fn.cargar_imagen_rgb('data/reemplazar/cat.png')
 coords1imagen = fn.encontrar_posicion_imgbuscar(img=imagen1fondo, img_buscar=imagen1buscar)
 
 # Cargar imagenes ejemplo 2:
-imagen2fondo = fn.cargar_imagen_rgb('../data/fondos/bus.png')
-imagen2buscar = fn.cargar_imagen_rgb('../data/buscar/buscar_bus.png')
-imagen2reemplazar = fn.cargar_imagen_rgb('../data/reemplazar/mamberroi.png')
+imagen2fondo = fn.cargar_imagen_rgb('data/fondos/bus.png')
+imagen2buscar = fn.cargar_imagen_rgb('data/buscar/buscar_bus.png')
+imagen2reemplazar = fn.cargar_imagen_rgb('data/reemplazar/mamberroi.png')
 coords2imagen = fn.encontrar_posicion_imgbuscar(img=imagen2fondo, img_buscar=imagen2buscar)
 
 # Cargar imagenes ejemplo 3:
-imagen3fondo = fn.cargar_imagen_rgb('../data/fondos/f1.png')
-imagen3buscar = fn.cargar_imagen_rgb('../data/buscar/buscar_f1.png')
-imagen3reemplazar = fn.cargar_imagen_rgb('../data/reemplazar/simio.png')
+imagen3fondo = fn.cargar_imagen_rgb('data/fondos/f1.png')
+imagen3buscar = fn.cargar_imagen_rgb('data/buscar/buscar_f1.png')
+imagen3reemplazar = fn.cargar_imagen_rgb('data/reemplazar/simio.png')
 coords3imagen = fn.encontrar_posicion_imgbuscar(img=imagen3fondo, img_buscar=imagen3buscar)
 
 # Cargar imagenes de prueba
-imagen4fondo = fn.cargar_imagen_rgb('../data/fondos/brasil.png')
+imagen4fondo = fn.cargar_imagen_rgb('data/fondos/brasil.png')
 # Pedazo a buscar que no se encuentra en la imagen de fondo para probar el mensaje de error
-imagen4buscar = fn.cargar_imagen_rgb('../data/buscar/buscar_bus.png') 
-imagen4reemplazar = fn.cargar_imagen_rgb('../data/reemplazar/mamberroi.png')
+imagen4buscar = fn.cargar_imagen_rgb('data/buscar/buscar_bus.png') 
+imagen4reemplazar = fn.cargar_imagen_rgb('data/reemplazar/mamberroi.png')
 coords4imagen = fn.encontrar_posicion_imgbuscar(img=imagen4fondo, img_buscar=imagen4buscar)
 
 # Diccionario de imagenes y coordenadas
