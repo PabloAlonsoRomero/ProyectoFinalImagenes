@@ -49,15 +49,14 @@ img_pegar_grande = np.array([
 coords = fn.encontrar_posicion_imgbuscar(img=img_prueba, img_buscar=img_buscar)
 
 # Prueba funciones con imagenes reales:
-img_prueba1 = fn.cargar_imagen_rgb('data/img_prueba1.png')
-img_buscar1 = fn.cargar_imagen_rgb('data/img_buscar1.png')
-# img_buscar2 = fn.cargar_imagen_rgb('data/img_buscar2.png')
-img_pegar1 = fn.cargar_imagen_rgb('data/img_pegar1.png')
-img_pegar2 = fn.cargar_imagen_rgb('data/img_pegar2.png')
 
 st.title("Proyecto Final - Procesamiento de Imágenes")
 
-
+# Cargar imagenes ejemplo 1:
+imagen1fondo = fn.cargar_imagen_rgb('data/fondos/brasil.png')
+imagen1buscar = fn.cargar_imagen_rgb('data/buscar/buscar_brasil.png')
+imagen1reemplazar = fn.cargar_imagen_rgb('data/reemplazar/cat.png')
+coords1imagen = fn.encontrar_posicion_imgbuscar(img=imagen1fondo, img_buscar=imagen1buscar)
 
 coords = fn.encontrar_posicion_imgbuscar(img=img_prueba1, img_buscar=img_buscar1)
 
