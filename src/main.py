@@ -51,7 +51,7 @@ coords = fn.encontrar_posicion_imgbuscar(img=img_prueba, img_buscar=img_buscar)
 
 # Prueba funciones con imagenes reales:
 # Cargar imagenes ejemplo 1:
-imagen1fondo = fn.cargar_imagen_rgb(directorio_actual + '/data/fondos/brasil.png')
+imagen1fondo = fn.cargar_imagen_rgb('/data/fondos/brasil.png')
 imagen1buscar = fn.cargar_imagen_rgb('data/buscar/buscar_brasil.png')
 imagen1reemplazar = fn.cargar_imagen_rgb('data/reemplazar/cat.png')
 coords1imagen = fn.encontrar_posicion_imgbuscar(img=imagen1fondo, img_buscar=imagen1buscar)
@@ -63,7 +63,7 @@ imagen2reemplazar = fn.cargar_imagen_rgb('data/reemplazar/mamberroi.png')
 coords2imagen = fn.encontrar_posicion_imgbuscar(img=imagen2fondo, img_buscar=imagen2buscar)
 
 # Cargar imagenes ejemplo 3:
-imagen3fondo = fn.cargar_imagen_rgb(directorio_actual + '/data/fondos/f1.png')
+imagen3fondo = fn.cargar_imagen_rgb('/data/fondos/f1.png')
 imagen3buscar = fn.cargar_imagen_rgb('data/buscar/buscar_f1.png')
 imagen3reemplazar = fn.cargar_imagen_rgb('data/reemplazar/simio.png')
 coords3imagen = fn.encontrar_posicion_imgbuscar(img=imagen3fondo, img_buscar=imagen3buscar)
