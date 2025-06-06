@@ -66,9 +66,9 @@ imagen3reemplazar = fn.cargar_imagen_rgb('data/reemplazar/simio.png')
 coords3imagen = fn.encontrar_posicion_imgbuscar(img=imagen3fondo, img_buscar=imagen3buscar)
 
 # Cargar imagenes de prueba
-imagen4fondo = fn.cargar_imagen_rgb('data/fondos/brasil.png')
+imagen4fondo = fn.cargar_imagen_rgb('data/fondos/f1.png')
 # Pedazo a buscar que no se encuentra en la imagen de fondo para probar el mensaje de error
-imagen4buscar = fn.cargar_imagen_rgb('data/buscar/buscar_bus.png') 
+imagen4buscar = fn.cargar_imagen_rgb('data/buscar/buscar_f12.png') 
 imagen4reemplazar = fn.cargar_imagen_rgb('data/reemplazar/mamberroi.png')
 coords4imagen = fn.encontrar_posicion_imgbuscar(img=imagen4fondo, img_buscar=imagen4buscar)
 
